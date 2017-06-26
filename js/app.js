@@ -7,13 +7,12 @@ $(function(){
         },
         setHeight: function(){
             var allSpan = List.DOMElements.allSpan;
-            var height = 0;
-            allSpan.each(function(){
-                if(parseInt($(this).css("height")) > height){
-                    height = parseInt($(this).css("height"));
-                }
-            });
-            allSpan.css("height", height);
+            var allLi = List.DOMElements.allLi;
+            var height = parseInt($(allLi[0]).css("height")) / 2;
+            console.log(height);
+            var oneLineSpan = $(".one_line");
+            allSpan.css("height", height).css("line-height", (height / 2) + "px" );
+            oneLineSpan.css("line-height", height + "px");
         },
         setList: function(listElements){
             listElements.on("click", function(event){
@@ -40,7 +39,8 @@ $(function(){
     $(window).on('resize', function(){
         List.setHeight();
     });
-    $("#submit").on("click", function(){
+    $("#submit").on("click", function(event){
         event.preventDefault();
-    });
+        event.stopPropagation();
+    })
 })
