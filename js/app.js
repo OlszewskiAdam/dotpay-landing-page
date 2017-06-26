@@ -36,8 +36,11 @@ $(function(){
         },
     };
     List.setHeight();
-    List.setList(List.DOMElements.allLi)
+    List.setList(List.DOMElements.allLi);
     $(window).on('resize', function(){
         List.setHeight();
-    })
+    });
+    $("#submit").on("click", function(){
+        event.preventDefault();
+    });
 })
