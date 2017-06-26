@@ -8,7 +8,7 @@ $(function(){
         setHeight: function(){
             var allSpan = List.DOMElements.allSpan;
             var allLi = List.DOMElements.allLi;
-            var height = parseInt($(allLi[0]).css("height")) / 2;
+            var height = parseInt($(allLi[4]).css("height")) / 2;
             console.log(height);
             var oneLineSpan = $(".one_line");
             allSpan.css("height", height).css("line-height", (height / 2) + "px" );
